@@ -1,0 +1,255 @@
+body {
+
+    background-color: whitesmoke;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    #border: 1px solid blue;
+    z-index: 5;
+    background-color: whitesmoke;
+    -webkit-box-shadow: -1px 1px 18px -6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 1px 18px -6px rgba(0, 0, 0, 0.75);
+}
+
+.nav div {
+
+    #display: inline-block;
+}
+
+.inputs {
+    position: absolute;
+    top: 15px;
+    right: 40px;
+    #border: 1px solid green;
+
+
+}
+
+#input-search {
+
+    border: none;
+    background-color: white;
+    width: 285px;
+    height: 40px;
+    color: black;
+    font-size: 20px;
+    margin-right: 25px;
+}
+
+#button-account {
+    border: none;
+    background-color: transparent;
+
+    height: 40px;
+    color: black;
+    font-size: 20px;
+
+}
+
+#button-basket {
+
+    border: none;
+    height: 40px;
+    background-color: transparent;
+    font-size: 20px;
+
+
+}
+
+.title {
+    position: absolute;
+    top: 0px;
+    left: 40px;
+    color: white;
+    padding-right: 0px;
+    font-family: sans-serif;
+    font-weight: 900;
+    font-size: 50px;
+    font-style: italic;
+    text-shadow: 0 1px 0 #ccc,
+        0 2px 0 #c9c9c9,
+        0 3px 0 #bbb,
+        0 4px 0 #b9b9b9,
+        0 5px 0 #aaa,
+        0 6px 1px rgba(0, 0, 0, .1),
+        0 0 5px rgba(0, 0, 0, .1),
+        0 1px 3px rgba(0, 0, 0, .3),
+        0 3px 5px rgba(0, 0, 0, .2),
+        0 5px 10px rgba(0, 0, 0, .25),
+        0 10px 10px rgba(0, 0, 0, .2),
+        0 20px 20px rgba(0, 0, 0, .15);
+
+
+
+}
+
+.left-nav {
+    position: fixed;
+    left: 0px;
+    top: 70px;
+    width: 250px;
+    height: 700px;
+    margin-top: 0px;
+    padding-left: 40px;
+    padding-top: 20px;
+    background-color: whitesmoke;
+    -webkit-box-shadow: -1px 1px 18px -6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 1px 18px -6px rgba(0, 0, 0, 0.75);
+
+}
+
+.left-nav div {
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin: 0px;
+}
+
+.left-nav a {
+    text-decoration: none;
+    display: block;
+
+}
+
+#cat-text {
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+
+}
+
+.cat-name {
+
+    font-size: 25px;
+    color: black;
+    padding-left: 15px;
+    padding-top: 20px;
+}
+
+.cat-name:hover {
+    color: blue;
+
+}
+
+.content {
+    position: absolute;
+    top: 70px;
+    left: 290px;
+    width: 1050px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+
+}
+
+.poster {
+    width: 490px;
+    height: 500px;
+    margin: 10px;
+    background-color: white;
+
+}
+
+.poster img {
+    display: block;
+    width: 100%;
+    height: 420px;
+
+}
+
+.poster p {
+
+
+    font-size: 20px;
+    font-family: sans-serif;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+
+
+}
+
+
+.cover {
+    width: 600px;
+    height: 600px;
+    #border: 1px solid blue;
+
+}
+
+.cover img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+}
+
+.description {
+
+
+    height: 600px;
+    border: 1px solid blue;
+
+
+
+
+
+}
+
+
+
+#js-account {
+    display: none;
+    position: fixed;
+    z-index:15;
+    top: 70px;
+    right: 140px;
+
+    height: 180px;
+    width: 220px;
+    padding-left: 0px;
+    background-color: white;
+
+
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.title a{
+  text-decoration:none;
+  color:white;
+}
+.title a:hover{
+  text-decoration:none;
+  color:white;
+}
+.cat-name a{
+color:black;
+display:block;
+}
+.cat-name a:hover{
+
+
+text-decoration:none;
+color:blue;
+
+
+
+}
+.cat-name a:active{
+ color:green;
+}
+
+
+
+
+
+
+
+
+
