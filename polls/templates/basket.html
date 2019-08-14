@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div style="margin-left:40px;margin-right:40px;margin-top:0px;margin-bottom:20px;">
+    <table id="basket-table">
+  <tr>
+    <th>Image</th>
+    <th>Title</th>
+    <th>Release</th>
+    <th>Directed by</th>
+    <th>Price</th>
+    <th>Quantity</th>
+  </tr>
+   {% for basket_detail in basket.basket_details %}
+  <tr>
+    <td> <img style="width:50px;height:50px" src="{{basket_detail.movie.image_url}}"></td>
+    <td>{{basket_detail.movie.title}}</td>
+    <td>{{basket_detail.movie.year}}</td>
+    <td>{{basket_detail.movie.director}}</td>
+    <td>{{basket_detail.movie.price}}</td>
+    <td>{{basket_detail.quantity}}</td>
+  </tr>
+   {% endfor %}
+    
+  
+</table>
+<div style="float:right;margin-top:10px"><h2> Total: {{basket.total}}$</h2></div>
+    
+     
+  </div>
+
+
+
+<style>
+
+#basket-table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+font-size:20px;
+}
+
+#basket-table td, #basket-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#basket-table tr:nth-child(even){background-color: #f2f2f2;}
+
+#basket-table tr:hover {background-color: #ddd;}
+
+#basket-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+};
+
+
+ h2{
+   float:left;
+   }
+</style>
+{% endblock %}

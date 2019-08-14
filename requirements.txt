@@ -1,0 +1,5 @@
+Django==2.1.7
+django-bootstrap4==40.0.8 
+djangorestframework==3.9.2
+gunicorn==19.6.0
+

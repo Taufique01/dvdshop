@@ -1,0 +1,75 @@
+
+
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>dvd shops</title>
+    <meta name="description" content="Dvd">
+    <meta name="keywords" content="">
+    <meta name="author" content="compter-guide">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body class="body-style-1">
+    <div class="nav">
+        <div class="title">
+            DVD SHOP
+        </div>
+        <div class="inputs">
+            <input   type="search" id="input-search" value="search">
+            {% if user.is_authenticated %}
+            <input type="button" id="button-account" onclick="showAccount()" value="{{ user.username }}">
+            {% else %}
+            <input type="button" id="button-account" onclick="showAccount()" value="Account">
+            {% endif %}
+
+            <input type="button" id="button-basket" value="Baskets">
+        </div>
+
+    </div>
+
+
+
+
+<div  style="padding-top:100px;">
+          {% block content %}
+           
+          {% endblock %}
+</div>
+
+
+
+
+
+
+ 
+
+<div id="js-account">
+{% if user.is_authenticated %}
+                   <div>
+                <a class="dropdown-item" href="{% url 'password_change' %}">Change password</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'logout' %}">Log out</a>
+              </div>
+{% else %}
+          <form class="form-inline my-2 my-lg-0">
+            <a href="{% url 'login' %}" class="btn btn-outline-secondary">Log in</a>
+            <a href="{% url 'signup' %}" class="btn btn-primary ml-2">Sign up</a>
+          </form>
+{% endif %}
+
+</div> 
+
+
+
+
+    <script src="{% static 'js.js' %}"></script>
+</body>
+
+</html>
