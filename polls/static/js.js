@@ -57,12 +57,7 @@ function addToBasket(){
     var url = $("#url-details").attr("data-url");
     
     quan=$("#js-quantity").val()
-    if(parseInt(quan)<=0){
-        alert("quantity must be greater that zero.")
-        return;    
-        }
-    //INDEX = parseInt($("#js-quantity").val());
-        var data1 = {
+      var data1 = {
         "quantity": quan,
 
     };

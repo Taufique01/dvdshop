@@ -14,13 +14,16 @@
     <th>Quantity</th>
   </tr>
    {% for basket_detail in basket.basket_details %}
+
   <tr>
-    <td> <img style="width:50px;height:50px" src="{{basket_detail.movie.image_url}}"></td>
-    <td>{{basket_detail.movie.title}}</td>
+    
+    <td>   <a href="{% url 'movie_details' basket_detail.movie.catagory.catagory  basket_detail.movie.id %}"><img style="width:50px;height:50px" src="{{basket_detail.movie.image_url}}"></a></td>
+    <td><a href="{% url 'movie_details' basket_detail.movie.catagory.catagory  basket_detail.movie.id %}">{{basket_detail.movie.title}}</td>
     <td>{{basket_detail.movie.year}}</td>
     <td>{{basket_detail.movie.director}}</td>
     <td>{{basket_detail.movie.price}}</td>
     <td>{{basket_detail.quantity}}</td>
+    
   </tr>
    {% endfor %}
     
@@ -58,6 +61,21 @@ font-size:20px;
   background-color: #4CAF50;
   color: white;
 };
+
+#basket-table a{
+color:black;
+display:block;
+}
+#basket-table a:hover{
+
+
+text-decoration:none;
+color:blue;
+
+
+
+}
+
 
 
  h2{

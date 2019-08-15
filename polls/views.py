@@ -27,9 +27,16 @@ def movie_by_cat(request,catagory):
 
 def movie_details(request,catagory,pk):
     movie = Movie.objects.get(pk=pk)
-    return render(request,'details.html',{'movie':movie})
+    try:
+       basket_details=BasketDetails.objects.get(movie=movie)
+       quantity=basket_details.quantity
+    except BasketDetails.DoesNotExist:
+       quantity=0
+
+    return render(request,'details.html',{'movie':movie,'quantity':quantity})
 
 def get_basket(request):
+
     basket = Basket.objects.get(user=request.user)
     basket=BasketSerializer(basket,context={"request": request})
     data = basket.data
@@ -41,15 +48,30 @@ def add_to_basket(request,pk):
     if request.method=="POST":
         basket=request.user.basket_user
         movie=Movie.objects.get(id=pk)
-        quantity=request.POST['quantity']
+        quantity=float(request.POST['quantity'])
+        print(quantity)
+        quantity=int(quantity)
         basket_details,created=BasketDetails.objects.get_or_create(basket=basket,movie=movie)
-
-        basket_details.quantity=int(quantity)
-        basket_details.save()
-        basket.total=basket.total+int(quantity)*movie.price
-        basket.save()
-       
-            
+        
+        if created:
+           if quantity<1:
+              basket_details.delete()
+           else:
+              basket_details.quantity=quantity
+              basket_details.save()
+        
+              basket.total=basket.total+quantity*movie.price
+              basket.save()
+        else:
+           basket.total=basket.total-basket_details.quantity*movie.price
+           if quantity<1:
+              basket_details.delete()
+           else:
+              basket_details.quantity=quantity
+              basket_details.save()
+   
+              basket.total=basket.total+quantity*movie.price
+           basket.save()
         return JsonResponse({'status':'success'})
     
 def signup(request):
